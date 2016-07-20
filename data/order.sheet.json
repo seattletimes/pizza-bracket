@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Round 1",
+    "sheet": "round1",
+    "description": "Pick a slice, any slice"
+  },
+  {
+    "title": "Round 2",
+    "sheet": "round2",
+    "description": "Top 16, TBD"
+  },
+  {
+    "title": "Round 3",
+    "sheet": "round3",
+    "description": "Top 8, TBD"
+  },
+  {
+    "title": "Round 4",
+    "sheet": "round4",
+    "description": "Top 4, TBD"
+  },
+  {
+    "title": "Round 5",
+    "sheet": "round5",
+    "description": "Final two!"
+  }
+]

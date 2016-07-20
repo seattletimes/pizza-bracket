@@ -1,0 +1,61 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import "seattletimes";
+@import "flexbox";
+@import "page";
+
+@parks-green: #BD7;
+
+a {
+  color: @parks-green;
+  
+  &:hover {
+    color: darken(@parks-green, 10%);
+  }
+}
+.page-container{
+  max-width: 1500px;
+  margin: auto;
+}
+
+.bracket {
+  font-family: @df-sans;
+  .display-flex;
+  padding: 8px;
+  height: 99999px; //stupid Firefox hack
+  min-height: 400px;
+  max-height: 700px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  .align-items(stretch);
+
+  @media @tablet {
+    max-height: none;
+  }
+
+  @media @mobile {
+    display: block;
+    height: auto;
+    max-height: none;
+  }
+
+  .list-pane {
+    .flex(0 0 320px);
+
+    @media @tablet {
+      .flex(0 0 260px);
+    }
+  }
+
+  .focus-pane {
+    .flex(1);
+  }
+}
+
+@import "detail-pane";
+@import "list-pane";

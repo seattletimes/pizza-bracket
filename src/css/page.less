@@ -1,0 +1,136 @@
+@import "values";
+@import "flexbox";
+
+.main-nav {
+  margin: 10px 0 0;
+}
+
+.pinstripe {
+  background-image: 
+    repeating-linear-gradient(45deg, 
+      #f8f8f8 0px, #f1f1f1 1px,
+      #f1f1f1 5px, #f8f8f8 6px);
+}
+
+header.intro {
+
+  .splash {
+    position: relative;
+    z-index: -1;
+
+    .banner {
+      width: 70%;
+      display: block;
+      margin: auto;
+
+      @media @tablet {
+        width: 100%;
+      }
+    }
+  }
+
+  .wywh { //wish you were here
+    font-family: Lobster Two, @df-serif;
+    // position: absolute;
+    // top: 40px;
+    // left: 40px;
+    // -webkit-transform: rotate(-10deg);
+    // transform: rotate(-10deg);
+
+    // @media @mobile {
+    //   position: static;
+    //   display: block;
+    //   -webkit-transform: none;
+    //   transform: none;
+    //   padding: 20px 0;
+    //   background: #345;
+    // }
+
+    h1 {
+      @main: @parks-green;
+      @outline: white;
+      @distance: 2px;
+
+      margin: 0;
+      color: @main;
+      // text-shadow:
+      //   -@distance -@distance 0 @outline, //top left
+      //   0 -@distance 0 @outline, // top
+      //   @distance -@distance 0 @outline, //top right
+      //   @distance 0 0 @outline, //right
+      //   @distance @distance 0 @outline, //bottom right
+      //   0 @distance 0 @outline, //bottom
+      //   -@distance @distance 0 @outline, //bottom left
+      //   -@distance 0 0 @outline; //left
+      font-weight: normal;
+      text-align: center;
+      display: block;
+
+      @media @mobile {
+        text-shadow: 1px 1px 0px white;
+      }
+    }
+
+    h1 {
+      padding-top: 20px;
+      font-size: 72px;
+      @media @mobile { font-size: 40px }
+    }
+    h2 {
+      font-family: @df-sans;
+      text-align: center;
+      margin: 0;
+      margin-top: 10px;
+      font-size: 24px;
+      @media @mobile { font-size: 24px }
+    }
+  }
+
+  .chatter {
+    max-width: 700px;
+    margin: auto;
+    display: block;
+    padding: 25px;
+  }
+}
+
+.ad {
+  text-align: center;
+  margin: auto;
+}
+
+.comments {
+  max-width: 800px;
+  margin: auto;
+  z-index: 0;
+  padding: 10px;
+}
+
+hr {
+  border: 1px solid @parks-green;
+  margin: 20px auto;
+  width: 300px;
+  max-width: 60%;
+}
+
+.credits {
+  max-width: 600px;
+  margin: auto;
+  list-style-type: none;
+  padding: 0;
+  font-family: @df-sans;
+  font-size: 14px;
+}
+
+footer {
+  .display-flex;
+  height: 50px;
+  margin-top: 50px;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, .2);
+
+  img {
+    height: 35px;
+    margin: 7px 0 5px 30px;
+    align-items: center;
+  }
+}

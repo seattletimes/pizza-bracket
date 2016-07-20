@@ -1,0 +1,117 @@
+@parks-dark-green: #588f40;
+
+.detail-pane {
+  .display-flex;
+  .flex(1);
+  padding: 0 8px;
+
+  .no-match {
+    .flex(1);
+    border-radius: 20px;
+    padding: 100px;
+    color: @df-dark-gray;
+    font-family: @df-sans;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 8px white;
+
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  .match-details {
+    .display-flex;
+    .justify-content(space-between);
+    .align-content(stretch);
+  }
+
+  .candidate {
+    .flex(0 0 50%);
+    padding: 0 16px;
+    background: white;
+    position: relative;
+    font-size: .9em;
+    line-height: 1.3em;
+
+    h1 {
+      margin: 0;
+    }
+
+
+    .image {
+        margin-bottom: 30px;
+
+        img {
+          width: 100%; //firefox hack
+        }
+        
+        .credit {
+          float: right; 
+          font-size: .8em;
+          padding: 0;
+          margin: 0;
+          color: @df-middle-gray;
+        }
+      }
+
+    .address {
+      margin: 5px 0 0 0;
+
+      a {
+        color: @df-middle-gray;
+        &:hover {
+          color: @parks-dark-green;
+        }
+      }
+    }  
+
+    
+    .vote-for-this {
+      text-transform: uppercase;
+      font-size: 24px;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .result {
+      color: darken(@parks-green, 20%);
+      font-size: 20px;
+    }
+
+    .close {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 999;
+      cursor: pointer;
+      color: @parks-green;
+      background: white;
+      border-radius: 8px;
+      font-size: 32px;
+    }
+
+    @media @mobile {
+      padding: 16px;
+      display: none;
+
+      &.focus {
+        display: block;
+        position: fixed;
+        overflow: auto;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, .2);
+        z-index: 99999;
+        background: white;
+
+        .close {
+          display: block;
+        }
+      }
+    }
+  }
+}

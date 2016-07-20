@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Sigmar+One|Lobster+Two:700:700italic' rel='stylesheet'>
+    <%= t.include("partials/_adHead.html") %>
+    <style>[ng-cloak] { display: none; }</style>
+  </head>
+  <body ng-app="brackets">
+
+    <%= t.include("partials/_ad.html", { type: "banner" }) %>
+
+    <%= t.include("partials/_dfHeader.html") %>
+
+    <header class="intro">
+      <div class="splash">
+        <img src="" class="banner">
+      </div>
+      <div class="wywh">
+          <h1>Seattle's Best Pizza</h1>
+          <h2>Vote for your favorite!</h2>
+        </div>
+      <p class="chatter" >
+        This space intentionally left delicious.
+    </header>
+
+    <hr>
+    <div class="page-container">
+      <main class="bracket" ng-controller="bracket-controller" ng-cloak>
+      
+        <nav class="list-pane">
+          <div class="round-selection">
+            <a class="shift-round" ng-click="shiftRound(-1)"><i class="fa fa-chevron-circle-left"></i></a>
+            <h1>{{round.title}}</h1>
+            <a class="shift-round" ng-click="shiftRound(1)"><i class="fa fa-chevron-circle-right"></i></a>
+          </div>
+          <div class="no-matchups pinstripe" ng-if="!round.matchups.length">
+            {{round.description}}
+          </div>
+          <ul class="round" ng-if="round.matchups.length">
+            <li
+              ng-repeat="match in round.matchups"
+              ng-class="{ voted: match.voted, selected: match == selected.match }"
+              class="matchup"
+            >
+                <div 
+                  ng-repeat="candidate in match.options"
+                  ng-class="{
+                    won: match.winner == candidate.id,
+                    chosen: candidate.id == match.voted
+                  }"
+                  class="card {{$first ? 'top' : 'bottom'}}"
+                  ng-click="selectMatch(match, candidate)"
+                >
+                    <div class="icons">
+                      <i class="fa fa-trophy win-marker" title="Winner" ng-if="match.winner == candidate.id"></i>
+                      <i class="fa fa-check-circle vote-marker" ng-if="match.voted == candidate.id"></i>
+                      <i class="fa fa-spinner fa-spin voting-marker" ng-if="candidate.voting"></i>
+                      <a
+                        ng-if="!bracket.closed && round.current && !match.voted && !candidate.voting"
+                        ng-click="vote(candidate, match); $event.stopPropagation()"
+                        class="vote button"
+                      ><i class="fa fa-check-square vote-link"></i></a>
+                    </div>
+                  {{ candidate.details.name }}
+                </div>
+
+          </li>
+        </ul>
+      </nav>
+
+      <section class="detail-pane">
+        <div class="no-match pinstripe" ng-if="!selected.match">
+          No match available &mdash; select a different round to view details.
+        </div>
+        <div class="match-details" ng-if="selected.match">
+          <div class="candidate"
+            ng-repeat="candidate in selected.match.options"
+            ng-class="{ focus: candidate == selected.candidate }"
+          >
+            <a class="close" ng-click="clearCandidate()">
+              <i class="fa fa-times-circle"></i>
+            </a>
+            <div class="image">
+              <img ng-src="assets/{{candidate.details.image}}.JPG">
+              <p class="credit">({{candidate.details.credit}})</p>
+            </div>  
+            <h1>{{candidate.details.name}}</h1>
+            <p class="address"><a href="{{candidate.details.maps}}" target="_blank">{{candidate.details.address}}</a></p>
+            <p class="address"><a href="{{candidate.details.url}}" target="_blank">More information ></a></p>
+            <p class="chatter">{{candidate.details.description}}</p>
+            <p class="result" ng-if="selected.match.voted || !round.current">
+              {{ candidate.votes }} VOTES
+            </p>
+            <div class="vote-for-this" ng-if="!bracket.closed && !selected.match.voted && round.current && !candidate.voting">
+              <a ng-click="vote(candidate, selected.match)"><i class="fa fa-check-square"></i> Vote</a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+      
+     </div> 
+    <hr>
+    
+    <ul class="credits">
+      <li> Development: Paige Collins, Thomas Wilburn
+      <li> Design: Frank Mina
+      <li> Lead image: Bettina Hansen
+    </ul>
+
+    <footer>
+      <img class="logo" src="assets/seattletimes.svg">
+    </footer>
+
+    <script>
+window.bracket = <%= JSON.stringify(grunt.data.bracket) %>;
+window.config = {
+  sheet: "<%= json.project.sheets[0] %>",
+  endpoint: "<%= json.project.endpoint %>",
+  page: "<%= json.package.name %>"
+};
+    </script>
+
+    <script src="app.js"></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_adFoot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>

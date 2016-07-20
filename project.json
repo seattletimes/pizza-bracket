@@ -1,0 +1,22 @@
+{
+  "s3": {
+    "stage": {
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "legitimate-prize"
+    },
+    "live": {
+      "bucket": "projects.seattletimes.com",
+      "path": "2016/pizza-bracket"
+    }
+  },
+  "title": "",
+  "description": "",
+  "url": "http://projects.seattletimes.com/2016/pizza-bracket/",
+  "slug": "",
+  "tags": ["lifestyle"],
+  "sheets": ["1lO7f8TgUTjqhSAWdgq8H7QlFkf_oxUY0098F16_d8dY"],
+  "endpoint": "https://script.google.com/macros/s/AKfycbwUjBMIagy2QkW3l2XI_nPAuGch97G4SDj8J9tr0epYbVtsap3E/exec",
+  "image": "",
+  "production": true,
+  "embedded": false
+}
