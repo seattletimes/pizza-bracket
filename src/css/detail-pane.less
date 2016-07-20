@@ -1,4 +1,4 @@
-@parks-dark-green: #588f40;
+@bracket-darker: darken(@bracket-color, 20%);
 
 .detail-pane {
   .display-flex;
@@ -61,7 +61,7 @@
       a {
         color: @df-middle-gray;
         &:hover {
-          color: @parks-dark-green;
+          color: @bracket-darker;
         }
       }
     }  
@@ -75,7 +75,7 @@
     }
 
     .result {
-      color: darken(@parks-green, 20%);
+      color: darken(@bracket-color, 20%);
       font-size: 20px;
     }
 
@@ -86,7 +86,7 @@
       right: 0;
       z-index: 999;
       cursor: pointer;
-      color: @parks-green;
+      color: @bracket-color;
       background: white;
       border-radius: 8px;
       font-size: 32px;

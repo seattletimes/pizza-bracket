@@ -36,13 +36,13 @@
       .justify-content(space-around);
       text-align: center;
       font-size: 24px;
-      // background: @parks-green;
-      color: @parks-green;
+      // background: @bracket-color;
+      color: @bracket-color;
       cursor: pointer;
       transition: color .2s linear;
 
       &:hover {
-        color: darken(@parks-green, 10%);
+        color: darken(@bracket-color, 10%);
       }
     }
 
@@ -76,7 +76,7 @@
   }
 
   &.selected {
-    @color: darken(@parks-green, 10%);
+    @color: darken(@bracket-color, 10%);
     background: @color;
     border-color: transparent;
 
@@ -114,7 +114,7 @@
   }
 
   &.chosen, &.won {
-    background: @parks-green;
+    background: @bracket-color;
   }
 
   .icons {
@@ -128,7 +128,7 @@
       color: @df-middle-gray;
 
       &:hover {
-        color: @parks-green;
+        color: @bracket-color;
       }
     }
 
