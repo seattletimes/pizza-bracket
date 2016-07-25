@@ -55,6 +55,7 @@ var controller = function($scope, $http) {
       candidate.voting = false;
       if (response.data.status == "success") {
         memory.flag(vote);
+        candidate.votes++;
         match.voted = vote;
       }
     });
