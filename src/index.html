@@ -7,14 +7,14 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One|Lobster+Two:700:700italic' rel='stylesheet'>
-    <%= t.include("partials/_adHead.html") %>
+    <%= t.include("partials/_head.html") %>
     <style>[ng-cloak] { display: none; }</style>
   </head>
   <body ng-app="brackets">
 
     <%= t.include("partials/_ad.html", { type: "banner" }) %>
 
-    <%= t.include("partials/_dfHeader.html") %>
+    <%= t.include("partials/_nav.html") %>
 
     <header class="intro">
       <div class="splash">
@@ -128,7 +128,7 @@ window.config = {
 
     <script src="app.js"></script>
     <% if (json.project.production) { %>
-    <%= !json.project.embedded ? t.include("partials/_adFoot.html") : "" %>
+    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
     <%= t.include("partials/_workHere.html") %>
     <% } %>
   </body>
