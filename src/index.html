@@ -85,13 +85,12 @@
               <i class="fa fa-times-circle"></i>
             </a>
             <div class="image">
-              <img ng-src="assets/{{candidate.details.image}}.jpg">
+              <img ng-src="assets/pizza/{{candidate.details.image}}.jpg">
               <p class="credit">({{candidate.details.credit}})</p>
             </div>  
             <h1>{{candidate.details.name}}</h1>
             <p class="address"><a href="{{candidate.details.maps}}" target="_blank">{{candidate.details.address}}</a></p>
             <p class="address"><a href="{{candidate.details.url}}" target="_blank">More information ></a></p>
-            <p class="chatter">{{candidate.details.category}}</p>
             <p class="result" ng-if="selected.match.voted || !round.current">
               {{ candidate.votes }} VOTES
             </p>

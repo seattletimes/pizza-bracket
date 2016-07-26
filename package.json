@@ -1,14 +1,14 @@
 {
-  "name": "park-bracket",
-  "description": "A user-voted bracket of Seattle's parks",
+  "name": "pizza-bracket",
+  "description": "A user-voted bracket of Seattle's pizza joints",
   "version": "0.0.1",
   "author": "Thomas Wilburn",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seattletimes/park-bracket.git"
+    "url": "https://github.com/seattletimes/pizza-bracket.git"
   },
   "scripts": {
-    "start": "grunt --round=round2"
+    "start": "grunt --round=round1"
   },
   "dependencies": {
     "angular": "^1.4.4",
