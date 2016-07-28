@@ -9,14 +9,14 @@
       "path": "2016/pizza-bracket"
     }
   },
-  "title": "",
-  "description": "",
+  "title": "Vote for your favorite pizza in Seattle",
+  "description": "Seattle may not be known for its pizza, but the  pie situation here has evolved enormously. In this bracket-style competition, 32 pizzerias in Seattle’s city limits go head-to-head, vying for the title Seattle Times readers’ favorite.",
   "url": "http://projects.seattletimes.com/2016/pizza-bracket/",
   "slug": "",
   "tags": ["lifestyle"],
   "sheets": ["1lO7f8TgUTjqhSAWdgq8H7QlFkf_oxUY0098F16_d8dY"],
   "endpoint": "https://script.google.com/macros/s/AKfycbwUjBMIagy2QkW3l2XI_nPAuGch97G4SDj8J9tr0epYbVtsap3E/exec",
-  "image": "",
+  "image": "/assets/pizza/italian.jpg",
   "production": true,
   "embedded": false
 }
