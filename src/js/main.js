@@ -64,6 +64,11 @@ var controller = function($scope, $http) {
   $scope.selectMatch = function(match, candidate) {
     $scope.selected = { match, candidate };
   };
+  
+  $scope.nextPair = function() {
+    var current = $scope.round.matchups.indexOf($scope.selected.match);
+    $scope.selectMatch($scope.round.matchups[current + 1]);
+  }
 
   $scope.clearCandidate = function() {
     if ($scope.selected) $scope.selected.candidate = null;

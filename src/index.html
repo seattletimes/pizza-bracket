@@ -24,7 +24,7 @@
           <h2>Vote for your favorite!</h2>
         </div>
       <p class="chatter" >
-        Seattle may not be known for its pizza, but <a href="http://www.seattletimes.com/life/food-drink/6-seattle-spots-for-truly-great-pizza/">the  pie situation here has evolved enormously</a>. In this bracket-style competition, 32 pizzerias in Seattle’s city limits go head-to-head, vying for the title of Seattle Times readers’ favorite. Click through all of the pairings below and cast your votes. The Savory 16 round begins Aug. 1.</br></br>We know, there’s a lot more pizza out there to choose from. If your favorite is missing, let us know what it is in the comments section below.</p> 
+        Seattle may not be known for its pizza, but <a href="http://www.seattletimes.com/life/food-drink/6-seattle-spots-for-truly-great-pizza/">the  pie situation here has evolved enormously</a>. In this bracket-style competition, 32 pizzerias in Seattle’s city limits go head-to-head, vying for the title of Seattle Times readers’ favorite. Click through all of the pairings below and cast your votes. The Savory 16 round begins Aug. 1.</br></br>We know, there’s a lot more pizza out there to choose from. If your favorite is missing, let us know what it is in the comments section below.</p>
 
     </header>
 
@@ -47,7 +47,7 @@
               ng-class="{ voted: match.voted, selected: match == selected.match }"
               class="matchup"
             >
-                <div 
+                <div
                   ng-repeat="candidate in match.options"
                   ng-class="{
                     won: match.winner == candidate.id,
@@ -88,7 +88,7 @@
             <div class="image">
               <img ng-src="assets/pizza/{{candidate.details.image}}.jpg">
               <p class="credit">({{candidate.details.credit}})</p>
-            </div>  
+            </div>
             <h1>{{candidate.details.name}}</h1>
             <p class="address"><a href="{{candidate.details.maps}}" target="_blank">{{candidate.details.address}}</a></p>
             <p class="address"><a href="{{candidate.details.url}}" target="_blank">More information ></a></p>
@@ -97,6 +97,9 @@
             </p>
             <div class="vote-for-this" ng-if="!bracket.closed && !selected.match.voted && round.current && !candidate.voting">
               <a ng-click="vote(candidate, selected.match)"><i class="fa fa-check-square"></i> Vote</a>
+            </div>
+            <div class="next-pair" ng-if="selected.match.voted">
+              <a ng-click="nextPair()">Vote on the next pair</a>
             </div>
           </div>
         </section>
@@ -109,7 +112,7 @@
       <li> <strong>Development:</strong> Paige Collins, Thomas Wilburn
       <li> <strong>Design:</strong> Frank Mina &nbsp;&nbsp;&nbsp;<strong>Production:</strong> Shirley Qiu
       <li> <strong>Lead image:</strong> Pam Ng, second from right, and her colleagues enjoy the pie at Italian Family Pizza on First Hill. (Erika Schultz / The Seattle Times)
-     </ul>  
+     </ul>
 
      <div style="max-width: 800px; margin: auto; margin-top: 30px;">
       <script src="//cdn.livefyre.com/Livefyre.js"></script>
@@ -134,7 +137,7 @@
        }());
        </script>
      </div>
-     </div> 
+     </div>
 
      <%= t.include("./_recirc.html") %>
    
