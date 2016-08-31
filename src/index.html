@@ -92,9 +92,10 @@
             <h1>{{candidate.details.name}}</h1>
             <p class="address"><a href="{{candidate.details.maps}}" target="_blank">{{candidate.details.address}}</a></p>
             <p class="address"><a href="{{candidate.details.url}}" target="_blank">More information ></a></p>
-            <p class="result" ng-if="selected.match.voted || !round.current">
-              {{ candidate.votes }} VOTES
-            </p>
+            <div class="result" ng-if="bracket.closed || selected.match.voted || !round.current">
+              <p ng-if="selected.match.winner == candidate.id" class="win-banner">WINNER!</p>
+              <p>{{ candidate.votes }} VOTES</p>
+            </div>
             <div class="vote-for-this" ng-if="!bracket.closed && !selected.match.voted && round.current && !candidate.voting">
               <a ng-click="vote(candidate, selected.match)"><i class="fa fa-check-square"></i> Vote</a>
             </div>
