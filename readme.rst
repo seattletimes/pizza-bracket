@@ -14,7 +14,7 @@ There are two parts to the setup for this project, remote and local. It's easies
 Remote setup
 ~~~~~~~~~~~~
 
-There are three required elements for the Google Sheets part of a bracket app. It needs a sheet named `order` (which contains the sheet names and display titles for each round), a sheet called `candidates` with metadata about each bracket option, and a Google Apps script published as a web app to handle voting. You can set these up from scratch (the script is included in the repo as XXXX.gs), but I would recommend simply duplicating the sample bracket sheet `here <http://example.com>`_.
+There are three required elements for the Google Sheets part of a bracket app. It needs a sheet named `order` (which contains the sheet names and display titles for each round), a sheet called `candidates` with metadata about each bracket option, and a Google Apps script published as a web app to handle voting. You can set these up from scratch (the script is included in the repo as XXXX.gs), but I would recommend simply duplicating the sample bracket sheet `here <https://docs.google.com/spreadsheets/d/1qs2WvlnLfrofJ8jMe19XYGA4-tagTa0b0uidgqtfPks/edit?usp=sharing>`_.
 
 Once the workbook is created/duplicated, it must be published to the web, and the web app must be enabled. For the latter, open the script editor (Tools -> Script Editor) and choose Publish -> Deploy as Web App from the menu. Make sure to choose "new" from the project version dropdown menu. The script should be set to execute as "me" and available to "anyone, even anonymous." Once successful, the dialog box will give you a web app URL. Leave that open, and then start the local setup.
 
